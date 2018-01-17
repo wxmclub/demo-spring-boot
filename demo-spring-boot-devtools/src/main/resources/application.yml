@@ -1,0 +1,14 @@
+# Common application properties
+# https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+server:
+  port: 8080
+  context-path: /devtools
+
+spring:
+  devtools:
+    restart:
+      # 手动配置监听文件夹变化
+      additional-paths: src/main/resources/
+  thymeleaf:
+    # 页面热部署
+    cache: false

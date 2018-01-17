@@ -1,0 +1,24 @@
+# Common application properties
+# https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+server:
+  port: 8080
+  context-path: /logback
+
+# LOGGING
+logging:
+  # Location of the logging configuration file. For instance `classpath:logback.xml` for Logback
+  #config:
+  path: /tmp/log/
+  file: logback.log
+  level:
+    com.wxmclub.demo.spring.boot: DEBUG
+  #pattern:
+    # Appender pattern for output to the console. Only supported with the default logback setup.
+    #console: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %c %x - %m%n"
+    #console: "[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} %c [%t] - %m%n"
+    #console: "[%p] %d{yyyy-MM-dd HH:mm:ss,SSS} %C [%t] (%F:%L) - %m%n"
+    # Appender pattern for output to the file. Only supported with the default logback setup.
+    #file:
+    # Appender pattern for log level (default %5p). Only supported with the default logback setup.
+    #level:
+
