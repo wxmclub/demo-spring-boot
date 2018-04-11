@@ -21,21 +21,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.wxmclub.demo.springboot.dubbo.provider.service;
+package com.wxmclub.demo.springboot.test.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.wxmclub.demo.springboot.dubbo.api.service.DubboHelloService;
+import org.springframework.stereotype.Service;
 
 /**
  * @author wxmclub@gmail.com
  * @version 1.0
  * @date 2018-04-11
  */
-@Service(version = "1.0.0")
-public class DubboHelloServiceImpl implements DubboHelloService {
+@Service
+public class HelloService {
 
-    @Override
-    public String hello(String name) {
+    public HelloService() {
+        System.out.println("========HelloService");
+    }
+
+    public String say(String name) {
         return "say: " + name;
     }
 

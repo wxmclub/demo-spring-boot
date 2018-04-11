@@ -21,22 +21,31 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.wxmclub.demo.springboot.dubbo.provider.service;
+package com.wxmclub.demo.springboot.test.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.wxmclub.demo.springboot.dubbo.api.service.DubboHelloService;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author wxmclub@gmail.com
  * @version 1.0
  * @date 2018-04-11
  */
-@Service(version = "1.0.0")
-public class DubboHelloServiceImpl implements DubboHelloService {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class HelloServiceTest {
 
-    @Override
-    public String hello(String name) {
-        return "say: " + name;
+    @Autowired
+    private HelloService helloService;
+
+    @Test
+    public void testSay() {
+        String name = "tom";
+        Assert.assertEquals("say: tom", helloService.say(name));
     }
 
 }

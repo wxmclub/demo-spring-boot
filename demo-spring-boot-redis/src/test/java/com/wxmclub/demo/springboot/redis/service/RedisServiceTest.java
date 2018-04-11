@@ -21,22 +21,35 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.wxmclub.demo.springboot.dubbo.provider.service;
+package com.wxmclub.demo.springboot.redis.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.wxmclub.demo.springboot.dubbo.api.service.DubboHelloService;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author wxmclub@gmail.com
  * @version 1.0
  * @date 2018-04-11
  */
-@Service(version = "1.0.0")
-public class DubboHelloServiceImpl implements DubboHelloService {
+@Ignore
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class RedisServiceTest {
 
-    @Override
-    public String hello(String name) {
-        return "say: " + name;
+    @Autowired
+    private RedisService redisService;
+
+    @Test
+    public void test() {
+        String name = "a";
+        String value = "123";
+        Assert.assertEquals("SUCCESS", redisService.set(name, value));
+        Assert.assertEquals(value, redisService.get(name));
     }
 
 }

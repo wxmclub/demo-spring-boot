@@ -21,22 +21,47 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.wxmclub.demo.springboot.dubbo.provider.service;
+package com.wxmclub.demo.springboot.mybatis.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.wxmclub.demo.springboot.dubbo.api.service.DubboHelloService;
+import com.github.pagehelper.PageInfo;
+import com.wxmclub.demo.springboot.mybatis.dao.model.auto.User;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author wxmclub@gmail.com
  * @version 1.0
  * @date 2018-04-11
  */
-@Service(version = "1.0.0")
-public class DubboHelloServiceImpl implements DubboHelloService {
+@Ignore
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class UserServiceTest {
 
-    @Override
-    public String hello(String name) {
-        return "say: " + name;
+    @Autowired
+    private UserService userService;
+
+    @Test
+    public void testAdd() {
+        User user = new User();
+        user.setLoginName("tom");
+        user.setPassword("123");
+
+        Assert.assertTrue(userService.add(user));
+    }
+
+    @Test
+    public void testList() {
+        int page = 1;
+        int pageSize = 10;
+        PageInfo<User> pageInfo = userService.list(page, pageSize);
+
+        Assert.assertTrue(pageInfo.getTotal() > 0L);
     }
 
 }
