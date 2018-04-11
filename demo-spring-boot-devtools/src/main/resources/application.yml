@@ -8,7 +8,9 @@ spring:
   devtools:
     restart:
       # 手动配置监听文件夹变化
-      additional-paths: src/main/resources/
+      #additional-paths: demo-spring-boot-devtools/src/main/resources
+      # 排除监听的目录
+      # exclude: WEB-INF/**
   thymeleaf:
     # 页面热部署
     cache: false

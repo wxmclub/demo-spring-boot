@@ -1,6 +1,7 @@
 package com.wxmclub.demo.spring.boot.log4j2.controller;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,10 +16,11 @@ import java.util.Map;
  * @version 1.0
  * @date 2017-12-17
  */
-@Slf4j
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
+
+    private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
     @RequestMapping("/say")
     public String say() {
