@@ -13,5 +13,6 @@
         <module>demo-spring-boot-helloworld</module>
         <module>demo-spring-boot-devtools</module>
         <module>demo-spring-boot-logging</module>
+        <module>demo-spring-boot-web</module>
     </modules>
 </project>
