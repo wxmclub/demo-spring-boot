@@ -15,5 +15,6 @@
         <module>demo-spring-boot-logging</module>
         <module>demo-spring-boot-web</module>
         <module>demo-spring-boot-dao</module>
+        <module>demo-spring-boot-dubbo</module>
     </modules>
 </project>

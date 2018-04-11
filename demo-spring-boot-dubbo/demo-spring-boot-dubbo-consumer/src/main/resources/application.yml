@@ -1,0 +1,11 @@
+server:
+  port: 8080
+  context-path: springboot-dubbo-consumer
+
+spring:
+  dubbo:
+    application:
+      name: springboot-dubbo-consumer
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    scan: com.wxmclub.demo.springboot.dubbo.consumer.controller
