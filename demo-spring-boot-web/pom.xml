@@ -9,6 +9,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>demo-spring-boot-jetty</module>
+        <module>demo-spring-boot-web-jetty</module>
     </modules>
 </project>

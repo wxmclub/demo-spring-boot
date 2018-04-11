@@ -5,15 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wxmclub.demo</groupId>
-    <artifactId>demo-spring-boot</artifactId>
+    <artifactId>demo-spring-boot-dao</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>demo-spring-boot-parent</module>
-        <module>demo-spring-boot-helloworld</module>
-        <module>demo-spring-boot-devtools</module>
-        <module>demo-spring-boot-logging</module>
-        <module>demo-spring-boot-web</module>
-        <module>demo-spring-boot-dao</module>
+        <module>demo-spring-boot-dao-mybatis</module>
     </modules>
 </project>
