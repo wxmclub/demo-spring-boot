@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>demo-srping-boot-jetty</artifactId>
+    <artifactId>demo-spring-boot-jetty</artifactId>
 
     <dependencies>
         <dependency>
