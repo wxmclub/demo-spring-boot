@@ -8,8 +8,9 @@ server:
 logging:
   # Location of the logging configuration file. For instance `classpath:logback.xml` for Logback
   #config:
-  path: /tmp/log/
-  file: logback.log
+  # 注：path和file同时配置时，只有file会生效
+  # path: /tmp/log/
+  file: /tmp/log/demo-spring-boot-logging-logback.log
   level:
     com.wxmclub.demo.spring.boot: DEBUG
   #pattern:

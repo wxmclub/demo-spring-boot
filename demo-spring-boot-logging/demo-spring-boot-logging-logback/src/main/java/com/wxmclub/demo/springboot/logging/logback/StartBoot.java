@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0
  * @date 2017-12-17
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.wxmclub.demo.springboot.logging.service"})
 public class StartBoot {
 
     public static void main(String[] args) {

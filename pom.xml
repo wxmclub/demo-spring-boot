@@ -16,7 +16,7 @@
         <module>demo-spring-boot-logging</module>
         <module>demo-spring-boot-web</module>
         <module>demo-spring-boot-mybatis</module>
-        <module>demo-spring-boot-dubbo</module>
         <module>demo-spring-boot-redis</module>
+        <module>demo-spring-boot-dubbo</module>
     </modules>
 </project>
