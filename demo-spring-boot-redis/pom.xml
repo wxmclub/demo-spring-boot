@@ -14,5 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo-spring-boot-redis-single</module>
+        <module>demo-spring-boot-redis-sentinel</module>
+        <module>demo-spring-boot-redis-cluster</module>
     </modules>
 </project>

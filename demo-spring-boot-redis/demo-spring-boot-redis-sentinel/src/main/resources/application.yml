@@ -1,8 +1,9 @@
 spring:
   redis:
-    # 单节点配置
-    host: 127.0.0.1
-    port: 6379
+    # 哨兵配置
+    sentinel:
+      master: mymaster
+      nodes: 10.211.55.5:26001,10.211.55.5:26002,10.211.55.5:26003
     # 连接超时时间 单位 ms（毫秒）
     timeout: 3000
     # 连接池

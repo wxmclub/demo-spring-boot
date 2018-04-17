@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.wxmclub.demo.springboot.redis.single.service;
+package com.wxmclub.demo.springboot.redis.cluster.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -30,7 +30,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author wxmclub@gmail.com
  * @version 1.0
- * @date 2018-04-11
+ * @date 2018-04-17
  */
 @Service
 public class RedisService {

@@ -21,34 +21,35 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.wxmclub.demo.springboot.redis.single.service;
+package com.wxmclub.demo.springboot.redis.cluster.service;
 
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author wxmclub@gmail.com
  * @version 1.0
- * @date 2018-04-11
+ * @date 2018-04-17
  */
-@Service
-public class RedisService {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class RedisServiceTest {
 
     @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+    private RedisService redisService;
 
-    public String set(String name, String value) {
-        redisTemplate.opsForValue().set(name, value);
-        return "SUCCESS";
-    }
+    @Test
+    public void test() {
+        String name = "c";
+        String value = "123";
+        Assert.assertEquals("SUCCESS", redisService.set(name, value));
+        Assert.assertEquals(value, redisService.get(name));
 
-    public String get(String name) {
-        return redisTemplate.opsForValue().get(name);
-    }
-
-    public void delete(String name) {
-        redisTemplate.delete(name);
+        redisService.delete(name);
     }
 
 }

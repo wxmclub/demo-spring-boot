@@ -50,6 +50,8 @@ public class RedisServiceTest {
         String value = "123";
         Assert.assertEquals("SUCCESS", redisService.set(name, value));
         Assert.assertEquals(value, redisService.get(name));
+
+        redisService.delete(name);
     }
 
 }
