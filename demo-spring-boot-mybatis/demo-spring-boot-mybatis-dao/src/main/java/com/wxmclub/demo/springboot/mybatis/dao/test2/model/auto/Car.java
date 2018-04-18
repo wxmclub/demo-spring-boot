@@ -1,13 +1,13 @@
-package com.wxmclub.demo.springboot.mybatis.dao.model.auto;
+package com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class Car implements Serializable {
     private String id;
 
-    private String loginName;
+    private String name;
 
-    private String password;
+    private String color;
 
     private Long createTime;
 
@@ -21,20 +21,20 @@ public class User implements Serializable {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getLoginName() {
-        return loginName;
+    public String getName() {
+        return name;
     }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName == null ? null : loginName.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getPassword() {
-        return password;
+    public String getColor() {
+        return color;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setColor(String color) {
+        this.color = color == null ? null : color.trim();
     }
 
     public Long getCreateTime() {
@@ -56,10 +56,10 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
+        Car other = (Car) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getLoginName() == null ? other.getLoginName() == null : this.getLoginName().equals(other.getLoginName()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
+            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+            && (this.getColor() == null ? other.getColor() == null : this.getColor().equals(other.getColor()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
@@ -68,8 +68,8 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getLoginName() == null) ? 0 : getLoginName().hashCode());
-        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        result = prime * result + ((getColor() == null) ? 0 : getColor().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
@@ -81,8 +81,8 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", loginName=").append(loginName);
-        sb.append(", password=").append(password);
+        sb.append(", name=").append(name);
+        sb.append(", color=").append(color);
         sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

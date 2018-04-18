@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wxmclub.demo.springboot.mybatis.dao.mapper.auto.UserMapper">
-  <resultMap id="BaseResultMap" type="com.wxmclub.demo.springboot.mybatis.dao.model.auto.User">
+<mapper namespace="com.wxmclub.demo.springboot.mybatis.dao.test2.mapper.auto.CarMapper">
+  <resultMap id="BaseResultMap" type="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.Car">
     <id column="id" jdbcType="CHAR" property="id" />
-    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
     <result column="create_time" jdbcType="BIGINT" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -66,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, login_name, password, create_time
+    id, name, color, create_time
   </sql>
-  <select id="selectByExample" parameterType="com.wxmclub.demo.springboot.mybatis.dao.model.auto.UserCondition" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.CarCondition" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_user
+    from t_car
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,36 +85,36 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from t_user
+    from t_car
     where id = #{id,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from t_user
+    delete from t_car
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.wxmclub.demo.springboot.mybatis.dao.model.auto.UserCondition">
-    delete from t_user
+  <delete id="deleteByExample" parameterType="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.CarCondition">
+    delete from t_car
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.wxmclub.demo.springboot.mybatis.dao.model.auto.User">
-    insert into t_user (id, login_name, password, 
+  <insert id="insert" parameterType="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.Car">
+    insert into t_car (id, name, color, 
       create_time)
-    values (#{id,jdbcType=CHAR}, #{loginName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.wxmclub.demo.springboot.mybatis.dao.model.auto.User">
-    insert into t_user
+  <insert id="insertSelective" parameterType="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.Car">
+    insert into t_car
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="loginName != null">
-        login_name,
+      <if test="name != null">
+        name,
       </if>
-      <if test="password != null">
-        password,
+      <if test="color != null">
+        color,
       </if>
       <if test="createTime != null">
         create_time,
@@ -124,34 +124,34 @@
       <if test="id != null">
         #{id,jdbcType=CHAR},
       </if>
-      <if test="loginName != null">
-        #{loginName,jdbcType=VARCHAR},
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="color != null">
+        #{color,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.wxmclub.demo.springboot.mybatis.dao.model.auto.UserCondition" resultType="java.lang.Long">
-    select count(*) from t_user
+  <select id="countByExample" parameterType="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.CarCondition" resultType="java.lang.Long">
+    select count(*) from t_car
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update t_user
+    update t_car
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=CHAR},
       </if>
-      <if test="record.loginName != null">
-        login_name = #{record.loginName,jdbcType=VARCHAR},
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
+      <if test="record.color != null">
+        color = #{record.color,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=BIGINT},
@@ -162,23 +162,23 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update t_user
+    update t_car
     set id = #{record.id,jdbcType=CHAR},
-      login_name = #{record.loginName,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      color = #{record.color,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wxmclub.demo.springboot.mybatis.dao.model.auto.User">
-    update t_user
+  <update id="updateByPrimaryKeySelective" parameterType="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.Car">
+    update t_car
     <set>
-      <if test="loginName != null">
-        login_name = #{loginName,jdbcType=VARCHAR},
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
+      <if test="color != null">
+        color = #{color,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=BIGINT},
@@ -186,10 +186,10 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.wxmclub.demo.springboot.mybatis.dao.model.auto.User">
-    update t_user
-    set login_name = #{loginName,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.wxmclub.demo.springboot.mybatis.dao.test2.model.auto.Car">
+    update t_car
+    set name = #{name,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=BIGINT}
     where id = #{id,jdbcType=CHAR}
   </update>

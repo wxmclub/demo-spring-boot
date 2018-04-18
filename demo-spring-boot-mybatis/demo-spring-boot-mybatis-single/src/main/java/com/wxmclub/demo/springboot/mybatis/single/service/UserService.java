@@ -23,12 +23,12 @@ SOFTWARE.
 */
 package com.wxmclub.demo.springboot.mybatis.single.service;
 
-import com.wxmclub.demo.springboot.mybatis.dao.mapper.auto.UserMapper;
-import com.wxmclub.demo.springboot.mybatis.dao.model.auto.User;
+import com.wxmclub.demo.springboot.mybatis.dao.test.mapper.auto.UserMapper;
+import com.wxmclub.demo.springboot.mybatis.dao.test.mapper.self.UserSelfMapper;
+import com.wxmclub.demo.springboot.mybatis.dao.test.model.auto.User;
+import com.wxmclub.demo.springboot.mybatis.single.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 /**
  * @author wxmclub@gmail.com
@@ -40,20 +40,17 @@ public class UserService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private UserSelfMapper userSelfMapper;
 
     public boolean add(User user) {
-        user.setId(this.genId());
+        user.setId(UUIDUtils.genId());
         user.setCreateTime(System.currentTimeMillis());
         return userMapper.insert(user) > 0;
     }
 
-    private String genId() {
-        String id = UUID.randomUUID().toString();
-        return id.substring(0, 8) + id.substring(9, 13) + id.substring(14, 18) + id.substring(19, 23) + id.substring(24);
-    }
-
     public User getById(String id) {
-        return userMapper.selectByPrimaryKey(id);
+        return userSelfMapper.findById(id);
     }
 
     public boolean delete(String id) {

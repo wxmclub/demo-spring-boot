@@ -1,7 +1,7 @@
-package com.wxmclub.demo.springboot.mybatis.dao.mapper.auto;
+package com.wxmclub.demo.springboot.mybatis.dao.test.mapper.auto;
 
-import com.wxmclub.demo.springboot.mybatis.dao.model.auto.User;
-import com.wxmclub.demo.springboot.mybatis.dao.model.auto.UserCondition;
+import com.wxmclub.demo.springboot.mybatis.dao.test.model.auto.User;
+import com.wxmclub.demo.springboot.mybatis.dao.test.model.auto.UserCondition;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

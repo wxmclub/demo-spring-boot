@@ -27,5 +27,5 @@ spring:
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
 mybatis:
-  mapper-locations: classpath:/com/wxmclub/demo/springboot/mybatis/dao/mapper/**/*.xml
+  mapper-locations: classpath*:/com/wxmclub/demo/springboot/mybatis/dao/mapper/**/*.xml
   type-aliases-package: com.wxmclub.demo.springboot.mybatis.dao.model.**.*

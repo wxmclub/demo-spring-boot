@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2017-12-17
  */
 @SpringBootApplication
-@MapperScan("com.wxmclub.demo.springboot.mybatis.dao.mapper")
+@MapperScan("com.wxmclub.demo.springboot.mybatis.dao.test.mapper")
 public class StartBoot {
 
     public static void main(String[] args) {

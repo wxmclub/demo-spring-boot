@@ -25,14 +25,13 @@ package com.wxmclub.demo.springboot.mybatis.pagehelper.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wxmclub.demo.springboot.mybatis.dao.mapper.auto.UserMapper;
-import com.wxmclub.demo.springboot.mybatis.dao.model.auto.User;
-import com.wxmclub.demo.springboot.mybatis.dao.model.auto.UserCondition;
+import com.wxmclub.demo.springboot.mybatis.dao.test.mapper.auto.UserMapper;
+import com.wxmclub.demo.springboot.mybatis.dao.test.model.auto.User;
+import com.wxmclub.demo.springboot.mybatis.dao.test.model.auto.UserCondition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @author wxmclub@gmail.com

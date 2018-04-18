@@ -24,7 +24,7 @@ SOFTWARE.
 package com.wxmclub.demo.springboot.mybatis.pagehelper.service;
 
 import com.github.pagehelper.PageInfo;
-import com.wxmclub.demo.springboot.mybatis.dao.model.auto.User;
+import com.wxmclub.demo.springboot.mybatis.dao.test.model.auto.User;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
